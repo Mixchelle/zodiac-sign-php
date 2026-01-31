@@ -1,0 +1,223 @@
+:root{
+  --bg-0:#070714;
+  --bg-1:#0B0B1E;
+  --card:#0f1224cc;
+  --card-solid:#0f1224;
+  --stroke:#2a2e46;
+  --text:#e9e9f3;
+  --muted:#a9adc3;
+
+  --gold-0:#fff2c2;
+  --gold-1:#f6d88f;
+  --gold-2:#d8b15a;
+  --gold-3:#a5812f;
+
+  --shadow: 0 25px 80px rgba(0,0,0,.55);
+}
+
+*{ box-sizing:border-box; }
+
+.z-body{
+  min-height:100vh;
+  background:
+    radial-gradient(1200px 700px at 50% -10%, rgba(255,214,120,.10), transparent 55%),
+    radial-gradient(900px 500px at 50% 90%, rgba(140,100,255,.10), transparent 60%),
+    linear-gradient(180deg, var(--bg-0), var(--bg-1));
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Camada de estrelas */
+.z-stars{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .9;
+  background-image:
+    radial-gradient(2px 2px at 15% 20%, rgba(255,215,120,.55) 40%, transparent 42%),
+    radial-gradient(1px 1px at 35% 80%, rgba(255,215,120,.40) 40%, transparent 42%),
+    radial-gradient(1px 1px at 60% 30%, rgba(255,215,120,.35) 40%, transparent 42%),
+    radial-gradient(2px 2px at 78% 22%, rgba(255,215,120,.55) 40%, transparent 42%),
+    radial-gradient(1px 1px at 84% 70%, rgba(255,215,120,.35) 40%, transparent 42%),
+    radial-gradient(1px 1px at 10% 65%, rgba(255,215,120,.35) 40%, transparent 42%),
+    radial-gradient(1px 1px at 48% 55%, rgba(255,215,120,.30) 40%, transparent 42%),
+    radial-gradient(2px 2px at 92% 40%, rgba(255,215,120,.45) 40%, transparent 42%);
+  filter: drop-shadow(0 0 6px rgba(255,210,120,.12));
+}
+
+/* Glow geral no centro */
+.z-glow{
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(500px 260px at 50% 36%, rgba(255,210,120,.12), transparent 70%),
+    radial-gradient(900px 420px at 50% 60%, rgba(0,0,0,.55), transparent 60%);
+}
+
+/* Layout central igual print */
+.z-wrap{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 56px 16px;
+  position: relative;
+}
+
+.z-hero{
+  text-align:center;
+  margin-bottom: 28px;
+}
+
+.z-title{
+  font-family: Cinzel, serif;
+  font-weight: 700;
+  letter-spacing: .02em;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--gold-1);
+  text-shadow: 0 0 18px rgba(255,210,120,.12);
+}
+
+.z-subtitle{
+  max-width: 560px;
+  margin: 10px auto 0;
+  color: rgba(233,233,243,.75);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Card principal */
+.z-card{
+  width: min(520px, 92vw);
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(16,18,36,.75), rgba(11,12,26,.75));
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+.z-card::before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:
+    radial-gradient(450px 260px at 50% -10%, rgba(255,210,120,.18), transparent 60%),
+    radial-gradient(800px 360px at 50% 120%, rgba(120,90,255,.10), transparent 60%);
+  opacity:.9;
+  pointer-events:none;
+}
+
+.z-card-inner{
+  position: relative;
+  padding: 40px;
+ margin-right: 1px;
+}
+
+
+
+.z-label{
+  color: rgba(233,233,243,.7);
+  font-size: 13px;
+  margin-bottom: 10px;
+  text-align:center;
+}
+
+.z-input{
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(10,12,24,.65);
+  border: 1px solid rgba(255,255,255,.10);
+  color: var(--text);
+  padding: 0 14px;
+  outline: none;
+}
+
+.z-input:focus{
+  border-color: rgba(255,210,120,.35);
+  box-shadow: 0 0 0 4px rgba(255,210,120,.08);
+}
+
+.z-input::placeholder{
+  color: rgba(233,233,243,.45);
+}
+
+.z-btn{
+  width: 100%;
+  height: 52px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: linear-gradient(180deg, var(--gold-2), var(--gold-3));
+  color: #1b1609;
+  font-weight: 700;
+  letter-spacing: .01em;
+  transition: transform .12s ease, filter .12s ease;
+}
+
+.z-btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+
+.z-btn:active{
+  transform: translateY(0px);
+}
+
+.z-badge{
+  width: 84px;
+  height: 84px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin: 6px auto 18px;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(0,0,0,.25), transparent 60%),
+    linear-gradient(180deg, var(--gold-1), var(--gold-2));
+  box-shadow: 0 0 0 10px rgba(255,210,120,.08), 0 18px 60px rgba(0,0,0,.45);
+}
+
+.z-symbol{
+  font-size: 42px;
+  line-height: 1;
+}
+
+.z-sign{
+  font-family: Cinzel, serif;
+  text-align:center;
+  font-size: 44px;
+  letter-spacing: .02em;
+  margin: 0 0 10px;
+  color: #fff;
+  text-shadow: 0 10px 40px rgba(0,0,0,.55);
+}
+
+.z-desc{
+  text-align:center;
+  color: rgba(233,233,243,.75);
+  margin: 0 0 18px;
+}
+
+.z-link{
+  display:inline-block;
+  margin-top: 6px;
+  color: rgba(233,233,243,.65);
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  transition: color .12s ease;
+}
+.z-link:hover{
+  color: var(--gold-1);
+}
+
+.z-wrap > div {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto;
+  text-align: center;
+}
